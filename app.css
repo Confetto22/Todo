@@ -1,0 +1,74 @@
+
+.window{
+    background-color: rgb(7, 7, 70);
+     max-width: 800px;
+    /*height: 700px; */
+    margin: auto;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 13px 11px #e94444;
+
+}
+
+h1{
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 3rem;
+}
+
+input{
+    width: 60%;
+    height: 2.4rem;
+    margin: auto;
+    display: block;
+    border-radius: 0.3rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    margin-top: 4rem;
+}
+
+.todo__list{
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 6rem;
+}
+.todo__item{
+    list-style-type: none;
+    color: #fff;
+    font-size: 1.4rem;
+    
+    padding: 1rem;
+    border-bottom: 0.1rem solid goldenrod;
+    width: 70%;
+    margin: auto;
+    transition: 0.5s;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+.done{
+    color: rgb(143, 137, 137);
+    text-decoration: line-through;
+}
+button{
+    padding: 0.6rem;
+    border: none;
+    transition: 0.4s;
+    font-weight: bold;
+    font-size: 1rem;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #4ed349;
+    color: #ffffff;
+}
+.todo__text{
+    max-width: 100px;
+}
