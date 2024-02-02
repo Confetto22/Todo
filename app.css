@@ -1,7 +1,8 @@
 
 .window{
     background-color: rgb(7, 7, 70);
-     max-width: 800px;
+     max-width: 50%;
+     
     /*height: 700px; */
     margin: auto;
     padding-bottom: 2rem;
@@ -33,7 +34,7 @@ input{
     display: flex;
     flex-direction: column;
     
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 .todo__item{
     list-style-type: none;
@@ -66,8 +67,12 @@ button{
 }
 button:hover{
     cursor: pointer;
-    background-color: #4ed349;
-    color: #ffffff;
+    
+}
+button:active{
+    cursor: pointer;
+  
+    opacity: 0.6;
 }
 .todo__text{
     max-width: 100px;
