@@ -119,12 +119,19 @@ newDone();
 function addListItem() {
     todoInputEl.addEventListener("keypress", function (event) {
       
-    if (event.keyCode === 13) {
-      let newListItem = createListItem(todoInputEl.value );
-      todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]);
-        // todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])    
+       
+
+      if (event.keyCode === 13) {
+        if (!todoInputEl.value) {
+             alert("Enter something!")
+             return
+         }
+        let newListItem = createListItem(todoInputEl.value );
+        todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]);
+            // todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])    
         
-      todoInputEl.value = "";
+            
+        todoInputEl.value = "";
       }
       
   });
