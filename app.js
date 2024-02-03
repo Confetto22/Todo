@@ -5,47 +5,20 @@ const todoListEl = document.querySelector(".todo__list");
 const todoTextEl = document.querySelector(".todo__text")
 const doneButtonEl = document.querySelectorAll(".done__button")
 const allTodoItems = document.querySelectorAll(".todo__item")
+const bodyEl = document.querySelector("body")
+const LightModeButton = document.querySelector("#lightmode")
+const windowEl = document.querySelector(".window")
+const addButtonEl = document.querySelector("#add")
 
-const header = document.querySelector("h1");
 
-
-
-// function toggleUndo() {
-//     doneButtonEl.forEach(single => {
-//         single.addEventListener("click", function(undo){
-//             single.textContent = ("Undo");
-            
-//         })
-
+function ToggleLightMode() {
+    LightModeButton.addEventListener("click", function () {
+        bodyEl.classList.toggle("darkmode")
         
-//     })
-    
-// }
-// toggleUndo();
-
-
-
-
-
-// function done() {
-//     doneButtonEl.forEach(button => {
-//         button.addEventListener("click", function () {
-//             let spanElement = button.previousElementSibling
-//             spanElement.classList.toggle("done");
-//         })
-//     });
-    
-// }
-
-
-// function done() {
-//     doneButtonEl.forEach(actual=> {
-//         actual.addEventListener("click", function () {
-//             let greyText = actual.previousElementSibling
-//             greyText.classList.toggle("done")
-//       })
-//     })
-// }
+        
+    })
+}
+ToggleLightMode();
 
 function done() {
     doneButtonEl.forEach(thing => {
@@ -56,7 +29,7 @@ function done() {
 
             // thing.textContent = textGrey.classList.contains("done") ? "undo" : "Done";
 
-            if (thing.textContent = textGrey.classList.contains("done")) {
+            if (textGrey.classList.contains("done")) {
                 thing.textContent = "Undo"
             } else thing.textContent = "Done";
 
@@ -72,11 +45,8 @@ done();
 
 
 function createButton() {
-    // let newButton = document.createElement("button");
-    // newButton.setAttribute("class", "done__button")
-    // newButton.innerHTML = "Done"
 
-      let newButton = document.createElement("button");
+    let newButton = document.createElement("button");
   newButton.setAttribute("class", "done__button");
   newButton.textContent = "Done";
     return newButton;
@@ -100,7 +70,7 @@ function createListItem(text) {
     newButton.addEventListener("click", function () {
         newSpan.classList.toggle("done");
 
-         if (newButton.textContent = newSpan.classList.contains("done")) {
+         if (newSpan.classList.contains("done")) {
                 newButton.textContent = "Undo"
             } else newButton.textContent = "Done";
     })
@@ -126,20 +96,43 @@ function addListItem() {
              alert("Enter something!")
              return
          }
-        let newListItem = createListItem(todoInputEl.value );
-        todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]);
-            // todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])    
+      let newListItem = createListItem(todoInputEl.value );
+      todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]);
+        // todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])    
+       
         
-            
-        todoInputEl.value = "";
+      todoInputEl.value = "";
       }
       
   });
     
 }
 
-
 addListItem();
+
+
+
+
+
+
+addButtonEl.addEventListener("click", function (clicking) {
+     if (clicking.target === addButtonEl) {
+        if (!todoInputEl.value) {
+             alert("Enter something!")
+             return
+         }
+      let newListItem = createListItem(todoInputEl.value );
+      todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]);
+        // todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])    
+       
+        
+      todoInputEl.value = "";
+      }
+      
+})
+
+
+
 
 
 
